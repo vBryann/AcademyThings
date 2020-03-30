@@ -157,10 +157,25 @@ struct Person {
     }
 }
 
-//------ Classes
+struct Option{
+    var name: String
+    init?(name:String){ //utilizando o failable init é capaz de definir um valor default para os parametros
+        if name.isEmpty{
+            return nil
+        }
+        self.name = name
+    }
+}
+
+
+//------ Classes -------
+
 class Dog{
     var name : String
     var raca : String
+    func latir(){
+        print("auau")
+    }
     init(name: String, raca: String){     //Uma das diferenças de classe pra struct, é que vc precisa criar inicializadores pra cada properties
         self.name = name
         self.raca = raca
@@ -171,6 +186,18 @@ class Husky: Dog{ //Para aplicar o sistema de subclasse (herança), é preciso r
     init(name: String){
         super.init(name: name, raca: "Husky Siberiano") //a chamada super.init na classe herdeira que permite utilizar o init da classe pai
     }
+    override func latir(){  // com o override na função é possivel sobrescrevê-la na classe filha
+        print("WoufWouf")
+    }
 }
+// Caso queira uma classe que n herde mais outra, basta por final antes da declaração
+class Vilain{
+    var name = "Thanos"
+}
+var vilain = Vilain()
+//print(vilain.name)
+var copy = vilain
+copy.name = "Ultron" //Uma das outras caracteristicas da classes é como os objetos são copiados, alterando um, todos alteram
+//print(vilain.name)
 
 
