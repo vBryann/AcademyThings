@@ -6,9 +6,9 @@ import UIKit
     // O uso do switch case em um menu
     if let command = readLine(){
         switch command{
-            case "1": print("Deu bom irmao")
+            case "1": print("Deu bom irmao, tudo safe")
             case "5": break
-            default : print("N deu irmao, tente dnv")
+            default : print("Deu bucho, tente dnv")
         }
     }
 
