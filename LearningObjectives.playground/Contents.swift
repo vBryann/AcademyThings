@@ -87,5 +87,8 @@ training{ condition in // forma 'reduzida' de representar uma closure recebendo 
 }
 
 /*
- 
+ // Using protocols
+protocol Make {
+    func a()
+}
  */
